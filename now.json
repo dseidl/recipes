@@ -1,0 +1,6 @@
+{
+    "name": "recipes",
+    "alias": "recipes",
+    "type": "docker",
+    "dotenv": ".env.production"
+}
