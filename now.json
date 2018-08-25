@@ -1,6 +1,10 @@
 {
     "name": "recipes",
-    "alias": "recipes",
+    "alias": "recipes.dseidl.me",
     "type": "docker",
-    "dotenv": ".env.production"
+    "public": true,
+    "dotenv": ".env.production",
+    "features": {
+        "cloud": "v2"
+    }
 }
