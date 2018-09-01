@@ -10,5 +10,6 @@ COPY . /app
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && mv .env.production .env
 
 RUN php artisan migrate --force
+RUN php artisan import:cookbook
 
 CMD php artisan serve --host=0.0.0.0 --port=80
