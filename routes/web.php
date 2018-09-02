@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/recipes', 'RecipesController@index')->name('recipes');
+Route::get('/recipes/{recipe}', 'RecipesController@show')->name('recipe-show');

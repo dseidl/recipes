@@ -24,4 +24,11 @@ class RecipesController extends Controller
 
         return $recipes;
     }
+
+    public function show(Recipe $recipe)
+    {
+        $recipe->load('cookingSteps', 'ingredients');
+
+        return new RecipeResource($recipe);
+    }
 }
