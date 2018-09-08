@@ -16,6 +16,7 @@ class CreateCookingStepsTable extends Migration
         Schema::create('cooking_steps', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('recipe_id')->nullable()->index();
+            $table->string('image')->nullable();
             $table->integer('step')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();

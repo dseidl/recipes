@@ -17,6 +17,7 @@ class CreateRecipesTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->longText('description')->nullable();
+            $table->string('image')->nullable();
             $table->integer('carbonhydrate')->default(0);
             $table->integer('protein')->default(0);
             $table->integer('fat')->default(0);
