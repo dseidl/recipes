@@ -2,13 +2,12 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\BelongsTo;
 
 class CookingStep extends Resource
 {

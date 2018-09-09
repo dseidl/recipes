@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Resources\UserResource;
 use App\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

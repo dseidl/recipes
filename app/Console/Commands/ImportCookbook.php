@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\CookingStep;
-use App\Ingredient;
 use App\Recipe;
+use App\Ingredient;
+use App\CookingStep;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
@@ -24,7 +24,7 @@ class ImportCookbook extends Command
 
         $bar = $this->output->createProgressBar(count($recipes));
 
-        $recipes->each(function($recipe) use ($bar) {
+        $recipes->each(function ($recipe) use ($bar) {
             $newRecipe = Recipe::updateOrCreate(
                 [
                     'source' => 'cookbook',
@@ -48,7 +48,7 @@ class ImportCookbook extends Command
                 ]
             );
 
-            $cookingSteps = collect($recipe->cookingSteps)->map(function($step) {
+            $cookingSteps = collect($recipe->cookingSteps)->map(function ($step) {
                 return CookingStep::updateOrCreate([
                     'description' => $step->description,
                     'step' => $step->step,
@@ -57,10 +57,10 @@ class ImportCookbook extends Command
             $newRecipe->cookingSteps()->saveMany($cookingSteps);
 
             $ingredients = collect($recipe->ingredients)
-                ->filter(function($ingredient) {
+                ->filter(function ($ingredient) {
                     return $ingredient->nrOfPersons === '2';
                 })
-                ->mapWithKeys(function($ingredient) {
+                ->mapWithKeys(function ($ingredient) {
                     $newIngredient = Ingredient::updateOrCreate([
                         'name' => $ingredient->name,
                     ]);
@@ -69,7 +69,7 @@ class ImportCookbook extends Command
                         $newIngredient->fresh()->id => [
                             'unit' => $ingredient->unit,
                             'quantity' => $ingredient->quantity,
-                        ]
+                        ],
                     ];
                 });
 

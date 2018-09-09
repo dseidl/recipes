@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
-use Illuminate\Http\Request;
 use App\Http\Resources\RecipeResource;
 
 class RecipesController extends Controller
