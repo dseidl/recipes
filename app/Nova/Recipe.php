@@ -51,7 +51,7 @@ class Recipe extends Resource
 
             Avatar::make('Image')->disk('public'),
 
-            Text::make('Name')
+            Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
@@ -67,22 +67,22 @@ class Recipe extends Resource
             Number::make('Carbonhydrate')->hideFromIndex(),
             Number::make('Protein')->hideFromIndex(),
             Number::make('Fat')->hideFromIndex(),
-            Number::make('Energy Value', 'energyValue')->hideFromIndex(),
+            Number::make('Energy Value')->hideFromIndex(),
 
-            Boolean::make('isVegetarian', 'isVegetarian'),
-            Boolean::make('isMeat', 'isMeat'),
-            Boolean::make('isFish', 'isFish'),
-            Boolean::make('isVegan', 'isVegan'),
-            Boolean::make('isGlutenFree', 'isGlutenFree'),
-            Boolean::make('isLactoseFree', 'isLactoseFree'),
+            Boolean::make('is Vegetarian'),
+            Boolean::make('is Meat'),
+            Boolean::make('is Fish'),
+            Boolean::make('is Vegan'),
+            Boolean::make('is Gluten free'),
+            Boolean::make('is Lactose free'),
 
-            Text::make('shouldHaveAtHome', 'shouldHaveAtHome')
+            Text::make('should have at home')
                 ->rules('nullable', 'max:255')
                 ->hideFromIndex(),
 
-            Textarea::make('cookingAdvice', 'cookingAdvice'),
+            Textarea::make('cooking advice'),
 
-            HasMany::make('cookingSteps', 'cookingSteps'),
+            HasMany::make('cookingSteps'),
 
             BelongsToMany::make('Ingredients')
                  ->fields(function () {

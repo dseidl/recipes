@@ -31,20 +31,20 @@ class ImportCookbook extends Command
                     'import_id' => $recipe->id,
                 ],
                 [
-                    'name' => $recipe->name,
+                    'title' => $recipe->name,
                     'description' => $recipe->description,
                     'carbonhydrate' => $recipe->carbonhydrate,
                     'protein' => $recipe->protein,
                     'fat' => $recipe->fat,
-                    'energyValue' => $recipe->energyValue,
-                    'isGlutenFree' => $recipe->isGlutenFree,
-                    'isLactoseFree' => $recipe->isLactoseFree,
-                    'isVegetarian' => $recipe->isVegetarian || $recipe->isVeggie,
-                    'isMeat' => $recipe->isMeat,
-                    'isFish' => $recipe->isFish,
-                    'isVegan' => $recipe->isVegan,
-                    'shouldHaveAtHome' => $recipe->shouldHaveAtHome,
-                    'cookingAdvice' => $recipe->cookingAdvice,
+                    'energy_value' => $recipe->energyValue,
+                    'is_gluten_free' => $recipe->isGlutenFree,
+                    'is_lactose_free' => $recipe->isLactoseFree,
+                    'is_vegetarian' => $recipe->isVegetarian || $recipe->isVeggie,
+                    'is_meat' => $recipe->isMeat,
+                    'is_fish' => $recipe->isFish,
+                    'is_vegan' => $recipe->isVegan,
+                    'should_have_at_home' => $recipe->shouldHaveAtHome,
+                    'cooking_advice' => $recipe->cookingAdvice,
                 ]
             );
 
@@ -62,7 +62,7 @@ class ImportCookbook extends Command
                 })
                 ->mapWithKeys(function ($ingredient) {
                     $newIngredient = Ingredient::updateOrCreate([
-                        'name' => $ingredient->name,
+                        'title' => $ingredient->name,
                     ]);
 
                     return [

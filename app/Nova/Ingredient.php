@@ -43,7 +43,7 @@ class Ingredient extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
