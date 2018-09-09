@@ -50,8 +50,8 @@ class Ingredient extends Resource
             BelongsToMany::make('Recipes')
                  ->fields(function () {
                      return [
-                         Text::make('Unit'),
-                         Text::make('Quantity'),
+                         Text::make('Unit')->displayUsing(function($field) {}),
+                         Text::make('Quantity')->displayUsing(function($field) {}),
                      ];
                  })
                  ->searchable(),
