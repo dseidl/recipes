@@ -69,12 +69,12 @@ class Recipe extends Resource
             Number::make('Fat')->hideFromIndex(),
             Number::make('Energy Value')->hideFromIndex(),
 
-            Boolean::make('is Vegetarian'),
-            Boolean::make('is Meat'),
-            Boolean::make('is Fish'),
-            Boolean::make('is Vegan'),
-            Boolean::make('is Gluten free'),
-            Boolean::make('is Lactose free'),
+            Boolean::make('is Vegetarian')->sortable(),
+            Boolean::make('is Meat')->sortable(),
+            Boolean::make('is Fish')->sortable(),
+            Boolean::make('is Vegan')->sortable(),
+            Boolean::make('is Gluten free')->sortable(),
+            Boolean::make('is Lactose free')->sortable(),
 
             Text::make('should have at home')
                 ->rules('nullable', 'max:255')

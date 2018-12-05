@@ -47,9 +47,9 @@ class CookingStep extends Resource
 
             Avatar::make('Image')->disk('public'),
 
-            Number::make('Step')->sortable(),
-
             Textarea::make('Description'),
+
+            Number::make('Step')->sortable(),
 
             BelongsTo::make('Recipe'),
         ];

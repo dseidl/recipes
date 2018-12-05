@@ -1,6 +1,6 @@
 {
     "name": "recipes",
-    "alias": "recipes.dseidl.me",
+    "alias": "recipes-test.dseidl.me",
     "type": "docker",
     "public": true,
     "dotenv": ".env.production",
