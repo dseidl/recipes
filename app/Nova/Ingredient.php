@@ -21,7 +21,7 @@ class Ingredient extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -29,7 +29,7 @@ class Ingredient extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name',
+        'id', 'title',
     ];
 
     /**
@@ -50,8 +50,8 @@ class Ingredient extends Resource
             BelongsToMany::make('Recipes')
                  ->fields(function () {
                      return [
-                         Text::make('Unit')->displayUsing(function($field) {}),
-                         Text::make('Quantity')->displayUsing(function($field) {}),
+                         Text::make('Unit'),
+                         Text::make('Quantity'),
                      ];
                  })
                  ->searchable(),

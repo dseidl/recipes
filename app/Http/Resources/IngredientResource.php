@@ -16,7 +16,7 @@ class IngredientResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'title' => $this->title,
 
             'unit' => $this->whenPivotLoaded('ingredient_recipe', function () {
                 return $this->pivot->unit;
