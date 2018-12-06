@@ -17,8 +17,8 @@ class RecipesController extends Controller
         $recipes = RecipeResource::collection(
             Recipe::query()
                   ->with('cookingSteps', 'ingredients')
-                  ->latest()
-                  ->paginate(10)
+//                  ->latest()
+                  ->paginate(40)
         );
 
         return $recipes;
