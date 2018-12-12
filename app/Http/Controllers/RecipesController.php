@@ -14,10 +14,14 @@ class RecipesController extends Controller
 
     public function index()
     {
+        $searchString = request('query');
+
         $recipes = RecipeResource::collection(
             Recipe::query()
                   ->with('cookingSteps', 'ingredients')
-//                  ->latest()
+                  ->when($searchString, function($query, $searchString) {
+                      return $query->where('title', 'like', "%{$searchString}%");
+                  })
                   ->paginate(40)
         );
 
